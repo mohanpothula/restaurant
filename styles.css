@@ -113,10 +113,33 @@ h4 { font-size: clamp(1rem, 2vw, 1.1rem);  }
   padding: 0.95em 2.6em;
   border-radius: var(--radius);
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
   transition: background var(--transition), color var(--transition),
               border-color var(--transition), box-shadow var(--transition),
               transform var(--transition);
+  animation: lanternPulse 3.5s ease-in-out infinite;
 }
+
+@keyframes lanternPulse {
+  0%, 100% { box-shadow: 0 0 10px rgba(196, 40, 62, 0.25); }
+  50%       { box-shadow: 0 0 28px rgba(196, 40, 62, 0.55), 0 0 8px rgba(201,168,76,0.2); }
+}
+
+/* Gold shimmer sweep on hover */
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,220,100,0.22), transparent);
+  transform: skewX(-18deg);
+  transition: left 0.5s ease;
+}
+
+.btn-primary:hover::after { left: 135%; }
 
 .btn-primary:hover,
 .btn-primary:focus-visible {
@@ -126,6 +149,7 @@ h4 { font-size: clamp(1rem, 2vw, 1.1rem);  }
   box-shadow: 0 0 0 2px rgba(196, 40, 62, 0.2);
   transform: translateY(-2px);
   outline: none;
+  animation: none;
 }
 
 .btn-primary:focus-visible {
@@ -299,12 +323,27 @@ h4 { font-size: clamp(1rem, 2vw, 1.1rem);  }
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    160deg,
-    rgba(10, 2, 4, 0.82) 0%,
-    rgba(90, 8, 22, 0.50) 45%,
-    rgba(10, 2, 4, 0.85) 100%
-  );
+  background:
+    /* top vignette */
+    linear-gradient(180deg, rgba(10,2,4,0.75) 0%, transparent 30%),
+    /* bottom vignette */
+    linear-gradient(0deg, rgba(10,2,4,0.92) 0%, transparent 40%),
+    /* crimson tint center */
+    radial-gradient(ellipse at 50% 55%, rgba(100,8,22,0.42) 0%, transparent 70%),
+    /* gold rim glow */
+    radial-gradient(ellipse at 50% 50%, transparent 40%, rgba(0,0,0,0.55) 100%);
+}
+
+/* Decorative top border under nav on hero */
+#hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--clr-gold), var(--clr-crimson-lt), var(--clr-gold), transparent);
+  z-index: 2;
 }
 
 .hero-content {
@@ -335,11 +374,23 @@ h4 { font-size: clamp(1rem, 2vw, 1.1rem);  }
   font-weight: 700;
   letter-spacing: 0.15em;
   text-shadow:
-    0 0 60px rgba(201, 168, 76, 0.35),
-    0 0 20px rgba(139, 26, 43, 0.4),
-    0 4px 24px rgba(0,0,0,0.6);
+    0 0 80px rgba(201, 168, 76, 0.55),
+    0 0 30px rgba(201, 168, 76, 0.3),
+    0 0 20px rgba(139, 26, 43, 0.5),
+    0 4px 24px rgba(0,0,0,0.7);
   margin-bottom: 0.2rem;
   line-height: 1;
+  position: relative;
+}
+
+/* Faint gold halo ring behind the title characters */
+.hero-title::before {
+  content: '';
+  position: absolute;
+  inset: -30% -15%;
+  background: radial-gradient(ellipse, rgba(201,168,76,0.12) 0%, transparent 68%);
+  pointer-events: none;
+  z-index: -1;
 }
 
 .hero-subtitle {
@@ -398,25 +449,49 @@ section {
 #menu {
   background: var(--clr-ivory);
   background-image:
-    repeating-linear-gradient(
-      45deg,
-      rgba(139, 26, 43, 0.018) 0px,
-      rgba(139, 26, 43, 0.018) 1px,
-      transparent 1px,
-      transparent 10px
-    );
+    /* Chinese window lattice — overlapping squares */
+    repeating-linear-gradient(0deg,   transparent, transparent 19px, rgba(139,26,43,0.055) 19px, rgba(139,26,43,0.055) 20px),
+    repeating-linear-gradient(90deg,  transparent, transparent 19px, rgba(139,26,43,0.055) 19px, rgba(139,26,43,0.055) 20px),
+    repeating-linear-gradient(0deg,   transparent, transparent 59px, rgba(201,168,76,0.06) 59px, rgba(201,168,76,0.06) 60px),
+    repeating-linear-gradient(90deg,  transparent, transparent 59px, rgba(201,168,76,0.06) 59px, rgba(201,168,76,0.06) 60px);
 }
 
 #testimonials {
   background: var(--clr-dark-alt);
   position: relative;
+  overflow: hidden;
 }
 
+/* Diagonal gold rules evoking Chinese folding screens */
 #testimonials::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at center, rgba(139, 26, 43, 0.10) 0%, transparent 68%);
+  background:
+    radial-gradient(ellipse at center, rgba(139, 26, 43, 0.14) 0%, transparent 65%),
+    repeating-linear-gradient(
+      -55deg,
+      transparent 0px,
+      transparent 38px,
+      rgba(201,168,76,0.028) 38px,
+      rgba(201,168,76,0.028) 39px
+    );
+  pointer-events: none;
+}
+
+/* Faint vertical red column lines — like palace pillars */
+#testimonials::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      transparent 119px,
+      rgba(139,26,43,0.06) 119px,
+      rgba(139,26,43,0.06) 120px
+    );
   pointer-events: none;
 }
 
@@ -461,30 +536,65 @@ section {
   line-height: 1.85;
 }
 
-/* Ornamental section divider — crimson line with gold diamonds */
+/* Ornamental section divider — dual crimson lines flanking a gold lozenge */
 .section-divider {
   position: relative;
-  width: 80px;
-  height: 1px;
-  background: var(--clr-crimson);
-  margin: 1.8rem auto 0;
-  opacity: 0.55;
+  width: 160px;
+  margin: 2rem auto 0;
+  height: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .section-divider::before,
 .section-divider::after {
   content: '';
   position: absolute;
-  width: 7px;
-  height: 7px;
-  background: var(--clr-gold);
-  border-radius: 1px;
-  transform: rotate(45deg);
-  top: -3px;
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, var(--clr-crimson) 25%, var(--clr-crimson) 75%, transparent);
+  opacity: 0.5;
 }
 
-.section-divider::before { left:  -3.5px; }
-.section-divider::after  { right: -3.5px; }
+.section-divider::before { top: 3px; }
+.section-divider::after  { bottom: 3px; }
+
+/* Centre lozenge via a sibling created in HTML — we use a pseudo on a nested span instead */
+/* We'll handle it with a box-shadow technique on the base element */
+.section-divider {
+  background:
+    radial-gradient(circle, var(--clr-gold) 3px, transparent 3.5px) center center / 1px 1px no-repeat;
+}
+
+/* Larger gold diamond in the middle */
+.section-divider::before {
+  content: '◆';
+  font-size: 0.6rem;
+  color: var(--clr-gold);
+  position: absolute;
+  background: none;
+  height: auto;
+  width: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  line-height: 1;
+  z-index: 1;
+}
+
+.section-divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--clr-crimson) 20%, var(--clr-crimson) 80%, transparent);
+  transform: translateY(-50%);
+  opacity: 0.45;
+}
 
 /* ── Menu ─────────────────────────────────────────────────── */
 .menu-category {
@@ -744,7 +854,33 @@ section {
   border-radius: calc(var(--radius) * 2);
   padding: clamp(2rem, 5vw, 3.5rem) clamp(1.5rem, 5vw, 3rem);
   box-shadow: var(--shadow-xl);
-  border-top: 3px solid var(--clr-crimson);
+  border-top: 4px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+}
+
+.form-container::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg,
+    var(--clr-crimson) 0%,
+    var(--clr-gold) 35%,
+    var(--clr-crimson-lt) 50%,
+    var(--clr-gold) 65%,
+    var(--clr-crimson) 100%
+  );
+  border-radius: calc(var(--radius) * 2) calc(var(--radius) * 2) 0 0;
+  background-size: 200% 100%;
+  animation: shimmerBorder 4s linear infinite;
+}
+
+@keyframes shimmerBorder {
+  0%   { background-position: 200% center; }
+  100% { background-position: -200% center; }
 }
 
 .form-row {
@@ -991,6 +1127,104 @@ input.is-invalid, select.is-invalid, textarea.is-invalid {
   text-align: center;
 }
 
+/* ── Contact Us ───────────────────────────────────────────── */
+#contact {
+  background: var(--clr-ivory);
+  background-image:
+    repeating-linear-gradient(0deg,   transparent, transparent 19px, rgba(139,26,43,0.055) 19px, rgba(139,26,43,0.055) 20px),
+    repeating-linear-gradient(90deg,  transparent, transparent 19px, rgba(139,26,43,0.055) 19px, rgba(139,26,43,0.055) 20px),
+    repeating-linear-gradient(0deg,   transparent, transparent 59px, rgba(201,168,76,0.06) 59px, rgba(201,168,76,0.06) 60px),
+    repeating-linear-gradient(90deg,  transparent, transparent 59px, rgba(201,168,76,0.06) 59px, rgba(201,168,76,0.06) 60px);
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.contact-label {
+  font-family: var(--ff-sans);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--clr-crimson-lt);
+  margin-bottom: 0.75rem;
+}
+
+.contact-item address,
+.contact-item p {
+  font-size: 0.9rem;
+  color: var(--clr-text-muted);
+  line-height: 1.8;
+  font-style: normal;
+}
+
+.contact-item a {
+  color: var(--clr-text-muted);
+  transition: color var(--transition);
+}
+
+.contact-item a:hover { color: var(--clr-crimson-lt); }
+
+.contact-hours {
+  font-size: 0.9rem;
+  color: var(--clr-text-muted);
+  line-height: 1.75;
+}
+
+.contact-hours dt {
+  font-weight: 600;
+  color: var(--clr-text);
+  margin-top: 0.6rem;
+  letter-spacing: 0.03em;
+}
+
+.contact-hours dt:first-child { margin-top: 0; }
+
+.contact-hours dd { margin-left: 0; }
+
+.contact-map {
+  border-radius: calc(var(--radius) * 2);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--clr-border);
+  position: relative;
+}
+
+.contact-map::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg,
+    var(--clr-crimson) 0%,
+    var(--clr-gold) 35%,
+    var(--clr-crimson-lt) 50%,
+    var(--clr-gold) 65%,
+    var(--clr-crimson) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmerBorder 4s linear infinite;
+  z-index: 1;
+}
+
+.contact-map iframe {
+  display: block;
+  width: 100%;
+  height: 400px;
+}
+
 /* ── Fade-In Animation ────────────────────────────────────── */
 .fade-in {
   opacity: 0;
@@ -1053,6 +1287,9 @@ input.is-invalid, select.is-invalid, textarea.is-invalid {
   /* Form */
   .form-row { grid-template-columns: 1fr; gap: 1rem; margin-bottom: 1rem; }
 
+  /* Contact */
+  .contact-layout { grid-template-columns: 1fr; }
+
   /* Footer */
   .footer-inner { grid-template-columns: 1fr 1fr; }
   .footer-brand { grid-column: 1 / -1; }
@@ -1075,4 +1312,82 @@ input.is-invalid, select.is-invalid, textarea.is-invalid {
 :focus-visible {
   outline: 2px solid var(--clr-crimson);
   outline-offset: 2px;
+}
+
+/* ── WhatsApp floating chatbot ── */
+#wa-chat-btn {
+  position: fixed;
+  bottom: 1.75rem;
+  right: 1.75rem;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background: #25d366;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, .35);
+  transition: transform .25s ease, box-shadow .25s ease;
+  text-decoration: none;
+}
+
+#wa-chat-btn svg {
+  width: 2rem;
+  height: 2rem;
+  fill: #fff;
+}
+
+#wa-chat-btn:hover,
+#wa-chat-btn:focus-visible {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, .4);
+  outline: 3px solid #25d366;
+  outline-offset: 3px;
+}
+
+.wa-tooltip {
+  position: absolute;
+  right: calc(100% + .6rem);
+  top: 50%;
+  transform: translateY(-50%);
+  background: #333;
+  color: #fff;
+  font-size: .75rem;
+  font-family: var(--ff-sans, sans-serif);
+  white-space: nowrap;
+  padding: .3rem .6rem;
+  border-radius: .25rem;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .2s ease;
+}
+
+.wa-tooltip::after {
+  content: '';
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 5px solid transparent;
+  border-left-color: #333;
+}
+
+#wa-chat-btn:hover .wa-tooltip,
+#wa-chat-btn:focus-visible .wa-tooltip {
+  opacity: 1;
+}
+
+@media (max-width: 480px) {
+  #wa-chat-btn {
+    bottom: 1.25rem;
+    right: 1.25rem;
+    width: 3rem;
+    height: 3rem;
+  }
+
+  #wa-chat-btn svg {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
 }

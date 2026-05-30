@@ -1,5 +1,5 @@
 /* ============================================================
-   Maison Lumière — script.js
+   Imperial Pavilion 帝苑 — script.js
    Nav scroll · Mobile nav · Fade-in · Carousel · Form
    ============================================================ */
 
