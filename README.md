@@ -1,6 +1,6 @@
-# Maison Lumière
+# Imperial Pavilion 帝苑
 
-A single-page restaurant booking website for **Maison Lumière**, a fictional upscale French fine-dining restaurant located at 12 Duxton Hill, Singapore. Built with pure vanilla HTML, CSS, and JavaScript — no frameworks, no build tools, no dependencies.
+A single-page restaurant booking website for **Imperial Pavilion 帝苑**, a fictional upscale Chinese fine-dining restaurant located at 8 Ann Siang Hill, Singapore. Built with pure vanilla HTML, CSS, and JavaScript — no frameworks, no build tools, no dependencies.
 
 ## Live Demo
 

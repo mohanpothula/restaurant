@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Maison Lumière — Authentic French fine dining in the heart of Singapore. Reserve your table for an unforgettable culinary journey.">
-  <title>Maison Lumière — Fine French Cuisine</title>
+  <meta name="description" content="Imperial Pavilion 帝苑 — Exceptional Chinese fine dining in the heart of Singapore. Reserve your table for an unforgettable journey through imperial cuisine.">
+  <title>Imperial Pavilion 帝苑 — Fine Chinese Cuisine</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600;700&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -17,9 +17,9 @@
   <!-- ===================== NAVIGATION ===================== -->
   <nav id="main-nav" aria-label="Main navigation">
     <div class="nav-inner">
-      <a href="#hero" class="nav-logo" aria-label="Maison Lumière — go to top">
-        <span class="logo-main">Maison Lumière</span>
-        <span class="logo-sub">Fine French Cuisine</span>
+      <a href="#hero" class="nav-logo" aria-label="Imperial Pavilion — go to top">
+        <span class="logo-main" lang="zh">帝苑</span>
+        <span class="logo-sub">Imperial Pavilion</span>
       </a>
 
       <button class="nav-toggle" id="nav-toggle"
@@ -40,12 +40,13 @@
   </nav>
 
   <!-- ===================== HERO ===================== -->
-  <section id="hero" aria-label="Welcome to Maison Lumière">
+  <section id="hero" aria-label="Welcome to Imperial Pavilion">
     <div class="hero-overlay" aria-hidden="true"></div>
     <div class="hero-content">
-      <p class="hero-eyebrow">Est. 1987 · Singapore</p>
-      <h1 class="hero-title">Maison Lumière</h1>
-      <p class="hero-tagline">Authentic French cuisine<br>in the heart of the city</p>
+      <p class="hero-eyebrow">Est. 1996 · Singapore</p>
+      <h1 class="hero-title" lang="zh">帝苑</h1>
+      <p class="hero-subtitle">Imperial Pavilion</p>
+      <p class="hero-tagline">Centuries of imperial tradition<br>distilled into every dish</p>
       <a href="#reservations" class="btn-primary">Reserve a Table</a>
     </div>
     <a href="#menu" class="hero-scroll-hint" aria-label="Scroll down to menu">
@@ -58,30 +59,44 @@
     <div class="section-inner">
 
       <header class="section-header fade-in">
-        <p class="section-eyebrow">Crafted with Passion</p>
-        <h2 id="menu-heading">Our Menu</h2>
-        <p class="section-intro">Each dish celebrates French culinary tradition, prepared with the finest seasonal ingredients and a reverence for classical technique.</p>
+        <p class="section-eyebrow">Crafted with Mastery</p>
+        <h2 id="menu-heading">Our Menu <span lang="zh">菜单</span></h2>
+        <p class="section-intro">Each dish honours centuries of Chinese culinary tradition — prepared with the finest seasonal ingredients and reverence for imperial technique.</p>
         <div class="section-divider" aria-hidden="true"></div>
       </header>
 
-      <!-- Entrées -->
+      <!-- Starters -->
       <div class="menu-category">
         <h3 class="category-title fade-in">
-          <span class="category-title-text">Entrées</span>
+          <span class="category-title-text">Starters <span lang="zh">前菜</span></span>
         </h3>
         <div class="dish-grid">
 
           <article class="dish-card fade-in">
             <div class="dish-img-wrap">
               <img
-                src="https://images.unsplash.com/photo-1559847844-5315695dadae?w=600&q=80"
-                alt="Escargots de Bourgogne — six snails baked in garlic and herb butter"
+                src="https://images.unsplash.com/photo-1623238913273-8a374db17744?w=600&q=80"
+                alt="Peking Duck — crispy lacquered duck with handmade pancakes and hoisin"
                 loading="lazy">
             </div>
             <div class="dish-info">
-              <h4 class="dish-name">Escargots de Bourgogne</h4>
-              <p class="dish-desc">Classic Burgundy snails in garlic herb butter, served with toasted brioche</p>
-              <span class="dish-price">S$24</span>
+              <h4 class="dish-name"><span lang="zh">北京烤鸭</span> Peking Duck</h4>
+              <p class="dish-desc">Whole roasted duck with golden lacquered skin, house-made pancakes, imperial hoisin, spring onion</p>
+              <span class="dish-price">S$68</span>
+            </div>
+          </article>
+
+          <article class="dish-card fade-in">
+            <div class="dish-img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1563245372-f21724e3856d?w=600&q=80"
+                alt="Xiao Long Bao — hand-pleated pork and crab soup dumplings"
+                loading="lazy">
+            </div>
+            <div class="dish-info">
+              <h4 class="dish-name"><span lang="zh">小笼包</span> Xiao Long Bao</h4>
+              <p class="dish-desc">Hand-pleated pork and Dungeness crab soup dumplings, Chinkiang black vinegar, julienned ginger</p>
+              <span class="dish-price">S$28</span>
             </div>
           </article>
 
@@ -89,65 +104,51 @@
             <div class="dish-img-wrap">
               <img
                 src="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&q=80"
-                alt="Soupe à l'Oignon — French onion soup with golden Gruyère crust"
+                alt="Chilled Jellyfish — wild jellyfish with king prawn and sesame oil"
                 loading="lazy">
             </div>
             <div class="dish-info">
-              <h4 class="dish-name">Soupe à l'Oignon</h4>
-              <p class="dish-desc">Slow-caramelised onion broth topped with a crusty croûton and melted Gruyère</p>
-              <span class="dish-price">S$18</span>
-            </div>
-          </article>
-
-          <article class="dish-card fade-in">
-            <div class="dish-img-wrap">
-              <img
-                src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=600&q=80"
-                alt="Foie Gras Poêlé — pan-seared duck liver with fig compote and brioche"
-                loading="lazy">
-            </div>
-            <div class="dish-info">
-              <h4 class="dish-name">Foie Gras Poêlé</h4>
-              <p class="dish-desc">Pan-seared duck foie gras, warm fig compote, and toasted brioche</p>
+              <h4 class="dish-name"><span lang="zh">冰镇海蜇</span> Chilled Jellyfish</h4>
+              <p class="dish-desc">Wild jellyfish ribbons with king prawn, toasted sesame oil, fresh ginger, and aged Shaoxing rice wine</p>
               <span class="dish-price">S$38</span>
             </div>
           </article>
 
         </div>
-      </div><!-- /Entrées -->
+      </div><!-- /Starters -->
 
-      <!-- Plats Principaux -->
+      <!-- Main Course -->
       <div class="menu-category">
         <h3 class="category-title fade-in">
-          <span class="category-title-text">Plats Principaux</span>
+          <span class="category-title-text">Main Course <span lang="zh">主菜</span></span>
         </h3>
         <div class="dish-grid">
 
           <article class="dish-card fade-in">
             <div class="dish-img-wrap">
               <img
-                src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=600&q=80"
-                alt="Coq au Vin — free-range chicken braised in Burgundy wine with lardons and mushrooms"
+                src="https://images.unsplash.com/photo-1544025162-d76538976696?w=600&q=80"
+                alt="Braised Abalone — 10-hour whole abalone in oyster sauce with bok choy"
                 loading="lazy">
             </div>
             <div class="dish-info">
-              <h4 class="dish-name">Coq au Vin</h4>
-              <p class="dish-desc">Free-range chicken slow-braised in Burgundy wine with lardons, pearl onions and wild mushrooms</p>
-              <span class="dish-price">S$48</span>
+              <h4 class="dish-name"><span lang="zh">红烧鲍鱼</span> Braised Abalone</h4>
+              <p class="dish-desc">10-hour slow-braised whole abalone, superior oyster sauce reduction, baby bok choy, fried shallots</p>
+              <span class="dish-price">S$128</span>
             </div>
           </article>
 
           <article class="dish-card fade-in">
             <div class="dish-img-wrap">
               <img
-                src="https://images.unsplash.com/photo-1565299507177-b0ac66763828?w=600&q=80"
-                alt="Canard Confit — duck leg slow-cooked in its own fat with Sarladaise potatoes"
+                src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=80"
+                alt="Kung Pao Lobster — Boston lobster with Sichuan peppercorn and cashew"
                 loading="lazy">
             </div>
             <div class="dish-info">
-              <h4 class="dish-name">Canard Confit</h4>
-              <p class="dish-desc">Duck leg slow-cooked in its own fat, served with Sarladaise potatoes and green lentils</p>
-              <span class="dish-price">S$52</span>
+              <h4 class="dish-name"><span lang="zh">宫保龙虾</span> Kung Pao Lobster</h4>
+              <p class="dish-desc">Boston lobster wok-tossed with Sichuan peppercorn, dried chilli, roasted cashew, and aged black vinegar</p>
+              <span class="dish-price">S$158</span>
             </div>
           </article>
 
@@ -155,50 +156,36 @@
             <div class="dish-img-wrap">
               <img
                 src="https://images.unsplash.com/photo-1585325701956-60dd9c8553bc?w=600&q=80"
-                alt="Bœuf Bourguignon — tender beef in red wine sauce with root vegetables"
+                alt="Wagyu Clay Pot — A5 wagyu beef in fermented black bean and Shaoxing wine"
                 loading="lazy">
             </div>
             <div class="dish-info">
-              <h4 class="dish-name">Bœuf Bourguignon</h4>
-              <p class="dish-desc">Tender braised beef in rich red wine sauce with pearl onions, carrots and fresh thyme</p>
-              <span class="dish-price">S$56</span>
+              <h4 class="dish-name"><span lang="zh">砂锅和牛</span> Wagyu Clay Pot</h4>
+              <p class="dish-desc">A5 Japanese wagyu with fermented black bean, Shaoxing rice wine, chrysanthemum greens, and tofu skin</p>
+              <span class="dish-price">S$198</span>
             </div>
           </article>
 
         </div>
-      </div><!-- /Plats Principaux -->
+      </div><!-- /Main Course -->
 
       <!-- Desserts -->
       <div class="menu-category">
         <h3 class="category-title fade-in">
-          <span class="category-title-text">Desserts</span>
+          <span class="category-title-text">Desserts <span lang="zh">甜品</span></span>
         </h3>
         <div class="dish-grid">
 
           <article class="dish-card fade-in">
             <div class="dish-img-wrap">
               <img
-                src="https://images.unsplash.com/photo-1470124182917-cc6e71b22ecc?w=600&q=80"
-                alt="Crème Brûlée — silky vanilla custard with caramelised sugar crust"
+                src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600&q=80"
+                alt="Mango Pomelo Sago — chilled mango cream with fresh pomelo and sago"
                 loading="lazy">
             </div>
             <div class="dish-info">
-              <h4 class="dish-name">Crème Brûlée</h4>
-              <p class="dish-desc">Silky vanilla custard beneath a perfectly caramelised sugar crust</p>
-              <span class="dish-price">S$16</span>
-            </div>
-          </article>
-
-          <article class="dish-card fade-in">
-            <div class="dish-img-wrap">
-              <img
-                src="https://images.unsplash.com/photo-1568051243851-f9b136146e97?w=600&q=80"
-                alt="Tarte Tatin — upside-down caramelised apple tart with Calvados cream"
-                loading="lazy">
-            </div>
-            <div class="dish-info">
-              <h4 class="dish-name">Tarte Tatin</h4>
-              <p class="dish-desc">Upside-down caramelised apple tart with flaky pastry and Calvados cream</p>
+              <h4 class="dish-name"><span lang="zh">杨枝甘露</span> Mango Pomelo Sago</h4>
+              <p class="dish-desc">Chilled Alphonso mango cream, fresh pomelo pearls, sago, and a drizzle of coconut milk</p>
               <span class="dish-price">S$18</span>
             </div>
           </article>
@@ -206,14 +193,28 @@
           <article class="dish-card fade-in">
             <div class="dish-img-wrap">
               <img
-                src="https://images.unsplash.com/photo-1569864358642-9d1684040f43?w=600&q=80"
-                alt="Macarons Assortis — selection of six seasonal French macarons"
+                src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=600&q=80"
+                alt="Black Sesame Tang Yuan — glutinous rice balls in ginger osmanthus broth"
                 loading="lazy">
             </div>
             <div class="dish-info">
-              <h4 class="dish-name">Macarons Assortis</h4>
-              <p class="dish-desc">A seasonal selection of six handcrafted macarons from our pâtissier</p>
+              <h4 class="dish-name"><span lang="zh">芝麻汤圆</span> Black Sesame Tang Yuan</h4>
+              <p class="dish-desc">Handcrafted glutinous rice balls with black sesame paste, served in a ginger-osmanthus broth</p>
               <span class="dish-price">S$14</span>
+            </div>
+          </article>
+
+          <article class="dish-card fade-in">
+            <div class="dish-img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1519984388953-d2406bc725e1?w=600&q=80"
+                alt="Imperial Egg Tarts — silken custard in flaky pastry with osmanthus honey"
+                loading="lazy">
+            </div>
+            <div class="dish-info">
+              <h4 class="dish-name"><span lang="zh">蛋撻</span> Imperial Egg Tarts</h4>
+              <p class="dish-desc">Silken egg custard baked in hand-pressed flaky pastry, finished with osmanthus honey and edible gold leaf</p>
+              <span class="dish-price">S$12</span>
             </div>
           </article>
 
@@ -238,20 +239,20 @@
 
           <blockquote class="testimonial-card" aria-roledescription="slide" aria-label="Testimonial 1 of 3">
             <div class="stars" aria-label="Five stars out of five">★★★★★</div>
-            <p class="quote">"An evening at Maison Lumière is pure theatre. From the amuse-bouche to the petit fours, every bite was a masterclass in French culinary art. The sommelier's wine pairings were nothing short of inspired."</p>
-            <cite class="guest-name">— Sophie Laurent, Paris</cite>
+            <p class="quote">Imperial Pavilion is the finest Chinese restaurant I have encountered outside of Hong Kong. The Peking Duck alone justifies the visit — crispy lacquered perfection. The service is impeccably attentive without ever being intrusive.</p>
+            <cite class="guest-name">— David Chen, Hong Kong</cite>
           </blockquote>
 
           <blockquote class="testimonial-card" aria-roledescription="slide" aria-label="Testimonial 2 of 3">
             <div class="stars" aria-label="Five stars out of five">★★★★★</div>
-            <p class="quote">"We celebrated our anniversary here and it was absolutely magical. The Coq au Vin transported me straight to Lyon. The staff's attention to detail is extraordinary — this is what truly world-class hospitality feels like."</p>
-            <cite class="guest-name">— James &amp; Clara Whitmore, London</cite>
+            <p class="quote">We celebrated our 25th anniversary here and it was utterly transcendent. The Braised Abalone melted on the tongue and the Mango Pomelo Sago was a revelation. This is what fine dining truly means — every detail, every gesture, absolute perfection.</p>
+            <cite class="guest-name">— Sarah &amp; Michael Wong, Sydney</cite>
           </blockquote>
 
           <blockquote class="testimonial-card" aria-roledescription="slide" aria-label="Testimonial 3 of 3">
             <div class="stars" aria-label="Five stars out of five">★★★★★</div>
-            <p class="quote">"The best French restaurant outside of France, without question. The Crème Brûlée alone is worth the trip. I've dined here four times and the consistency is remarkable. My favourite table in all of Singapore."</p>
-            <cite class="guest-name">— Amélie Rousseau, Singapore</cite>
+            <p class="quote">The Kung Pao Lobster is a masterpiece — bold Sichuan heat balanced with a haunting sweetness. My seventh visit and the consistency remains extraordinary. Imperial Pavilion has earned its Michelin recognition many times over.</p>
+            <cite class="guest-name">— Li Wei, Singapore</cite>
           </blockquote>
 
         </div><!-- /carousel-track -->
@@ -276,8 +277,8 @@
 
       <header class="section-header fade-in">
         <p class="section-eyebrow">Join Us</p>
-        <h2 id="reservations-heading">Reserve a Table</h2>
-        <p class="section-intro">We look forward to welcoming you. All reservation requests are confirmed within 24 hours by our reservations team.</p>
+        <h2 id="reservations-heading">Reserve a Table <span lang="zh">订座</span></h2>
+        <p class="section-intro">We look forward to welcoming you to the Imperial Pavilion. All reservation requests are confirmed within 24 hours by our reservations team.</p>
         <div class="section-divider" aria-hidden="true"></div>
       </header>
 
@@ -295,7 +296,7 @@
                 autocomplete="name"
                 required aria-required="true"
                 aria-describedby="name-error"
-                placeholder="Jean Dupont">
+                placeholder="Wei Ming Chen">
               <span class="error-msg" id="name-error" role="alert"></span>
             </div>
             <div class="form-group">
@@ -308,7 +309,7 @@
                 autocomplete="email"
                 required aria-required="true"
                 aria-describedby="email-error"
-                placeholder="jean@example.com">
+                placeholder="wei@example.com">
               <span class="error-msg" id="email-error" role="alert"></span>
             </div>
           </div>
@@ -394,7 +395,7 @@
             <textarea
               id="special-requests" name="specialRequests"
               rows="4"
-              placeholder="Dietary requirements, allergies, special occasions, seating preferences…"></textarea>
+              placeholder="Dietary requirements, allergies, special occasions, private dining inquiries…"></textarea>
           </div>
 
           <div class="form-submit-row">
@@ -414,17 +415,17 @@
     <div class="footer-inner">
 
       <div class="footer-brand">
-        <p class="footer-logo">Maison Lumière</p>
-        <p class="footer-tagline">Fine French Cuisine Since 1987</p>
-        <p class="footer-desc">A sanctuary of classical French gastronomy, where every meal is a celebration.</p>
+        <p class="footer-logo" lang="zh">帝苑</p>
+        <p class="footer-tagline">Imperial Pavilion · Fine Chinese Cuisine Since 1996</p>
+        <p class="footer-desc">A sanctuary of classical Chinese gastronomy, where imperial culinary heritage meets contemporary mastery.</p>
       </div>
 
       <div class="footer-contact">
         <h4 class="footer-heading">Find Us</h4>
         <address>
-          <p>12 Duxton Hill<br>Singapore 089597</p>
-          <p><a href="tel:+6561234567">+65 6123 4567</a></p>
-          <p><a href="mailto:reservations@maisonlumiere.sg">reservations@maisonlumiere.sg</a></p>
+          <p>8 Ann Siang Hill<br>Singapore 069790</p>
+          <p><a href="tel:+6568889999">+65 6888 9999</a></p>
+          <p><a href="mailto:reservations@imperialpavilion.sg">reservations@imperialpavilion.sg</a></p>
         </address>
       </div>
 
@@ -443,19 +444,19 @@
         <h4 class="footer-heading">Follow Us</h4>
         <ul class="social-links" role="list">
           <li>
-            <a href="#" aria-label="Maison Lumière on Instagram" class="social-link">
+            <a href="#" aria-label="Imperial Pavilion on Instagram" class="social-link">
               <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
               Instagram
             </a>
           </li>
           <li>
-            <a href="#" aria-label="Maison Lumière on Facebook" class="social-link">
+            <a href="#" aria-label="Imperial Pavilion on Facebook" class="social-link">
               <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
               Facebook
             </a>
           </li>
           <li>
-            <a href="#" aria-label="Maison Lumière on TripAdvisor" class="social-link">
+            <a href="#" aria-label="Imperial Pavilion on TripAdvisor" class="social-link">
               <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
               TripAdvisor
             </a>
@@ -466,7 +467,7 @@
     </div><!-- /footer-inner -->
 
     <div class="footer-bottom">
-      <p>&copy; 2026 Maison Lumière. All rights reserved. Designed with passion in Singapore.</p>
+      <p>&copy; 2026 Imperial Pavilion <span lang="zh">帝苑</span>. All rights reserved. Fine Chinese Cuisine in Singapore.</p>
     </div>
   </footer><!-- /footer -->
 
