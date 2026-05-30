@@ -7,7 +7,6 @@ A single-page restaurant booking website for **Maison Lumière**, a fictional up
 [https://mohanpothula.github.io/restaurant/](https://mohanpothula.github.io/restaurant/)
 
 ![screenshot](screenshot.png)
-> Replace `screenshot.png` with an actual screenshot of the site.
 
 ---
 
